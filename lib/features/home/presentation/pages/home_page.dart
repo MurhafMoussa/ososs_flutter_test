@@ -1,57 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ososs_flutter_test/I10n/generated/l10n.dart';
+import 'package:ososs_flutter_test/core/resources/border_raduis_manager.dart';
 import 'package:ososs_flutter_test/core/resources/padding_manager.dart';
+import 'package:ososs_flutter_test/core/resources/spaces_manager.dart';
+import 'package:ososs_flutter_test/features/home/presentation/manager/home_bloc.dart';
+import 'package:ososs_flutter_test/features/home/presentation/widgets/changeable_text.dart';
+import 'package:ososs_flutter_test/features/home/presentation/widgets/clear_fields_row.dart';
+import 'package:ososs_flutter_test/features/home/presentation/widgets/custom_filled_button.dart';
+import 'package:ososs_flutter_test/features/home/presentation/widgets/custom_text_form_field.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  final TextEditingController _nameController = TextEditingController();
-  @override
-  void dispose() {
-    _nameController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context).home),
-        ),
-        body: Padding(
-          padding: PaddingManager.contentPaddingV7H14,
-          child: Column(
-            children: [
-              TextField(
-                controller: _nameController,
+  Widget build(BuildContext context) => BlocProvider<HomeBloc>(
+        create: (context) => HomeBloc(),
+        child: Builder(
+          builder: (context) => Scaffold(
+            appBar: AppBar(
+              title: Text(
+                AppLocalizations.of(context).home,
               ),
-              Text(_nameController.text),
-              Spacer(),
-              GestureDetector(
-                onTap: () {
-                  _nameController.clear();
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      FontAwesomeIcons.trash,
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      width: 10.h,
-                    ),
-                    Text('Clear text')
-                  ],
-                ),
+            ),
+            body: Padding(
+              padding: PaddingManager.contentPaddingV15H20,
+              child: Column(
+                children: [
+                  const CustomTextFormField(),
+                  SpacesManager.h30,
+                  const ChangeableText(),
+                  const Spacer(),
+                  const ClearFieldsRow(),
+                  SpacesManager.h20,
+                  CustomFilledButton(
+                    content: AppLocalizations.of(context).goToPage1,
+                    onPressed: () {},
+                    backgroundColor: Colors.blue.shade700,
+                  ),
+                  SpacesManager.h20,
+                  CustomFilledButton(
+                    content: AppLocalizations.of(context).goToPage2,
+                    onPressed: () {},
+                    backgroundColor: Colors.blue.shade300,
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       );

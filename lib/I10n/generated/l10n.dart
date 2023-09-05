@@ -69,6 +69,46 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Go to page 1`
+  String get goToPage1 {
+    return Intl.message(
+      'Go to page 1',
+      name: 'goToPage1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to page 2`
+  String get goToPage2 {
+    return Intl.message(
+      'Go to page 2',
+      name: 'goToPage2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your name`
+  String get yourName {
+    return Intl.message(
+      'Your name',
+      name: 'yourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
