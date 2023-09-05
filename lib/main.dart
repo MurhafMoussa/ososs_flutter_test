@@ -8,6 +8,7 @@ import 'package:ososs_flutter_test/bloc_observer.dart';
 import 'package:ososs_flutter_test/core/resources/routes_manger.dart';
 import 'package:ososs_flutter_test/core/resources/strings_manager.dart';
 import 'package:ososs_flutter_test/core/resources/theme_manager.dart';
+import 'package:ososs_flutter_test/features/home/presentation/manager/home_bloc.dart';
 import 'package:ososs_flutter_test/injection.dart';
 
 Future<void> main() async {
@@ -35,26 +36,29 @@ class _OsossState extends State<Ososs> {
   final RoutesManager routesManager = RoutesManager();
 
   @override
-  Widget build(BuildContext context) => ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, widget) => MaterialApp.router(
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context).appTitle,
-          localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale(StringsManager.english),
-          ],
-          debugShowCheckedModeBanner: false,
-          color: Colors.white,
-          theme: getApplicationThemeData(),
-          routerConfig: routesManager.router,
+  Widget build(BuildContext context) => BlocProvider<HomeBloc>(
+        create: (context) => HomeBloc(),
+        child: ScreenUtilInit(
+          designSize: const Size(375, 812),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, widget) => MaterialApp.router(
+            onGenerateTitle: (BuildContext context) =>
+                AppLocalizations.of(context).appTitle,
+            localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale(StringsManager.english),
+            ],
+            debugShowCheckedModeBanner: false,
+            color: Colors.white,
+            theme: getApplicationThemeData(),
+            routerConfig: routesManager.router,
+          ),
         ),
       );
 }

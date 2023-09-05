@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ososs_flutter_test/features/home/presentation/pages/home_page.dart';
+import 'package:ososs_flutter_test/features/page_one/presentation/pages/page_one.dart';
 import 'package:ososs_flutter_test/features/splash/presentation/pages/splash_page.dart';
 
 import 'app_routes_names.dart';
@@ -29,6 +30,15 @@ class RoutesManager {
           name: AppRoutesNames.home,
           pageBuilder: (context, state) => CupertinoPage(
             child: const HomePage(),
+            key: state.pageKey,
+            name: state.name,
+          ),
+        ),
+        GoRoute(
+          path: '/page-one',
+          name: AppRoutesNames.pageOne,
+          pageBuilder: (context, state) => CupertinoPage(
+            child: const PageOne(),
             key: state.pageKey,
             name: state.name,
           ),
