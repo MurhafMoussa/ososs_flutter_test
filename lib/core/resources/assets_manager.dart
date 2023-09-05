@@ -1,0 +1,3 @@
+class AssetsManager {
+  AssetsManager._();
+}
