@@ -13,7 +13,7 @@ class SelectedShape extends StatelessWidget {
         /// can do the job
         builder: (context, state) => AnimatedContainer(
           duration: const Duration(
-            milliseconds: 1,
+            milliseconds: 700,
           ),
           width: double.infinity,
           height: MediaQuery.maybeOf(context)!.size.height / 2.5,

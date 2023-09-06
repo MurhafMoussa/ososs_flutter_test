@@ -6,5 +6,7 @@
   "goToPage2": "Go to page 2",
   "yourName": "Your name",
   "enterYourName": "Enter your name",
-  "animation": "Animation"
+  "animation": "Animation",
+  "pokemons": "Pokemons",
+  "noMorePokemons": "No More Pokemons"
 }

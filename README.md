@@ -1,16 +1,6 @@
-# ososs_flutter_test
 
-A new Flutter project.
+# I wanna thank the creator of the test ^_^ I had a lot of fun doing it :)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- please run "flutter pub run build_runner build" without the double quotes in order to generate the necessary code 
+- the documentation is written where it is only needed because the code is self explanatory 
+and it is following the dart guidelines and best practices

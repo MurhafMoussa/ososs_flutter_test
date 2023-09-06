@@ -119,6 +119,26 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Pokemons`
+  String get pokemons {
+    return Intl.message(
+      'Pokemons',
+      name: 'pokemons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No More Pokemons`
+  String get noMorePokemons {
+    return Intl.message(
+      'No More Pokemons',
+      name: 'noMorePokemons',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

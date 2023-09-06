@@ -29,6 +29,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToPage1": MessageLookupByLibrary.simpleMessage("Go to page 1"),
         "goToPage2": MessageLookupByLibrary.simpleMessage("Go to page 2"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "noMorePokemons":
+            MessageLookupByLibrary.simpleMessage("No More Pokemons"),
+        "pokemons": MessageLookupByLibrary.simpleMessage("Pokemons"),
         "yourName": MessageLookupByLibrary.simpleMessage("Your name")
       };
 }
