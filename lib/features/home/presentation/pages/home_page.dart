@@ -44,9 +44,12 @@ class HomePage extends StatelessWidget {
               ),
               SpacesManager.h20,
               CustomFilledButton(
-                  content: AppLocalizations.of(context).goToPage2,
-                  onPressed: () {},
-                  backgroundColor: ColorManager.lightBlue),
+                content: AppLocalizations.of(context).goToPage2,
+                onPressed: () async {
+                  context.pushNamed(AppRoutesNames.pageTwo);
+                },
+                backgroundColor: ColorManager.lightBlue,
+              ),
             ],
           ),
         ),
